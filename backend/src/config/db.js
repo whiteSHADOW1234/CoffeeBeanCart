@@ -2,7 +2,7 @@
 const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || 'localhost:3307',   // 3307 For Docker; 3306 for local
+  host: process.env.DB_HOST || '3307',   // 3307 For Docker; 3306 for local
   user: process.env.MYSQL_USER || 'newuser',
   password: process.env.MYSQL_PASSWORD || 'new_user',
   database: process.env.MYSQL_DATABASE || 'coffeebeanorders',
