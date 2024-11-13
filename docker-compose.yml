@@ -1,42 +1,33 @@
-version: '3.8'
 
+version: '3.8'
 services:
   backend:
-    build:
-      context: .               # Use the root directory
-      dockerfile: Dockerfile    # Specify the root-level Dockerfile
-      target: backend           # Use the backend target stage in Dockerfile
+    build: ./backend    # Path to the backend Dockerfile
     ports:
-      - "3001:3001"             # Map port 3001 on the host to 3001 in the container
+      - "3001:3001"  # Map port 3001 on the host to 3001 in the container
     environment:
-      - DB_HOST=db
-      - MYSQL_USER=${MYSQL_USER}
+      - DB_HOST=db   # The hostname of the database container
+      - MYSQL_USER=${MYSQL_USER}    # Get these from your .env file
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_TEST_DATABASE=${MYSQL_TEST_DATABASE}
+      - MYSQL_TEST_DATABASE=${MYSQL_TEST_DATABASE} # For testing
     depends_on:
-      - db                      # Ensure the database starts before the backend
-
+      - db          # Ensure the database starts before the backend
   frontend:
-    build:
-      context: .                # Use the root directory
-      dockerfile: Dockerfile     # Specify the root-level Dockerfile
-      target: frontend           # Use the frontend target stage in Dockerfile
+    build: ./frontend  # Path to the frontend Dockerfile
     ports:
-      - "80:80"                 # Map port 80 to 80 (or another port if needed)
+      - "80:80"      # Map port 80 to 80 (or another port if needed)
     depends_on:
-      - backend                 # Ensure the backend starts before the frontend
-
+      - backend       # Ensure the backend starts before the frontend
   db:
     image: mysql:8.0
-    ports:
-      - "3307:3306"
+    ports: # If required
+        - "3307:3306"
     env_file:
-      - .env
+      - .env           # Load environment variables from .env
     volumes:
       - mysql_data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
-
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD} # Set env variables if they are not in .env
 volumes:
   mysql_data:   # Named volume for MySQL data persistence
