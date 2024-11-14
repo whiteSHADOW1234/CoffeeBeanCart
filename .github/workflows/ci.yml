@@ -19,17 +19,10 @@ jobs:
           node-version: 16  # Or your desired Node.js version
 
       - name: Install backend dependencies
-        run: npm install --prefix backend
+        run: cd backend && npm install && cd ..
 
       - name: Install frontend dependencies
-        run: npm install --prefix frontend
-
-
-      - name: Build backend
-        run: npm run build --prefix backend
-
-      - name: Build frontend
-        run: npm run build --prefix frontend
+        run: cd frontend && npm install && cd ..
 
       - name: Run backend tests
         run: npm test --prefix backend
