@@ -14,21 +14,21 @@ const pool = mysql.createPool({
 });
 
 // acquire connection and set database if none selected
-pool.getConnection()
-    .then(conn => {
-        if (!conn.config.database) {
-            return conn.query(`USE ${process.env.MYSQL_DATABASE}`)
-                .then(() => conn.release()); // IMPORTANT: Release the connection
-        }
-        else {
-            conn.release()
-            return Promise.resolve()
-        }
-    })
-    .catch(err => {
-        console.error('Error selecting database:', err);
-        // Handle the error appropriately (e.g., exit the process)
-    });
+// pool.getConnection()
+//     .then(conn => {
+//         if (!conn.config.database) {
+//             return conn.query(`USE ${process.env.MYSQL_DATABASE}`)
+//                 .then(() => conn.release()); // IMPORTANT: Release the connection
+//         }
+//         else {
+//             conn.release()
+//             return Promise.resolve()
+//         }
+//     })
+//     .catch(err => {
+//         console.error('Error selecting database:', err);
+//         // Handle the error appropriately (e.g., exit the process)
+//     });
 
 
 
