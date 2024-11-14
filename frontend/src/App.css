@@ -2,199 +2,14 @@
 
 /* General styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #e0e0e0;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  margin: 0;
-  padding: 10px;
-}
-
-.App {
-  width: 100%;
-  max-width: 1000px;
-  color: #333;
-}
-
-/* Header styles */
-.app-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.app-header h1 {
-  font-size: 2em;
-  color: #424242;
-  border-bottom: 2px solid #757575;
-  padding-bottom: 10px;
-  margin: 0;
-}
-
-/* Form styles */
-form {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-label {
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #555;
-}
-
-input[type="text"],
-input[type="number"],
-select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  margin-top: 4px;
-  font-size: 16px;
-  background-color: #fafafa;
-  box-sizing: border-box;
-}
-
-button {
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #757575;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin: 5px 0;
-}
-
-button:hover {
-  background-color: #5e5e5e;
-}
-
-/* Order table styles */
-.order-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.order-table thead {
-  background-color: #757575;
-  color: white;
-}
-
-.order-table th,
-.order-table td {
-  padding: 10px;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-.order-table th {
-  font-weight: bold;
-}
-
-.order-table tbody tr:nth-child(even) {
-  background-color: #f0f0f0;
-}
-
-.order-table button {
-  background-color: #b71c1c;
-  padding: 6px 10px;
-  font-size: 14px;
-  color: white;
-  border-radius: 4px;
-}
-
-.order-table button:hover {
-  background-color: #a31515;
-}
-
-/* Export button container */
-.App > div {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.App > div button {
-  flex-grow: 1;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .App {
-      width: 100%;
-      padding: 0;
-  }
-
-  form,
-  .App > div {
-      margin-bottom: 15px;
-  }
-
-  label,
-  input[type="text"],
-  input[type="number"],
-  select {
-      font-size: 14px;
-  }
-
-  button {
-      font-size: 14px;
-      padding: 8px;
-  }
-
-  .App > div {
-      flex-direction: column;
-  }
-
-  .App > div button {
-      width: 100%;
-      margin-bottom: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  input[type="text"],
-  input[type="number"],
-  select {
-      font-size: 14px;
-      padding: 6px;
-  }
-
-  .order-table th,
-  .order-table td {
-      padding: 8px;
-  }
-
-  button {
-      font-size: 12px;
-      padding: 6px;
-  }
-
-  .order-table button {
-      font-size: 12px;
-      padding: 5px 8px;
-  }
-}
-/* App.css - Minimalist Design */
-
-body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #f8f9fa; /* Light grey background for contrast */
-  color: #333; /* Dark grey text for readability */
-  margin: 0;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
+  margin: 0;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -202,9 +17,10 @@ body {
 .App {
   width: 100%;
   max-width: 800px;
+  color: #333;
 }
 
-/* Header Styles */
+/* Header styles */
 .app-header {
   text-align: center;
   margin-bottom: 20px;
@@ -219,7 +35,7 @@ body {
   border-bottom: 1px solid #e0e0e0; /* Subtle underline */
 }
 
-/* Form Styles */
+/* Form styles */
 form {
   display: flex;
   flex-direction: column;
@@ -229,7 +45,9 @@ form {
 
 label {
   font-size: 1rem;
+  font-weight: bold;
   color: #555;
+  margin-bottom: 8px;
 }
 
 input[type="text"],
@@ -238,11 +56,14 @@ select {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  width: 100%;
+  margin-top: 4px;
   font-size: 1rem;
   background-color: #fafafa;
   color: #333;
   outline: none;
   transition: border-color 0.2s;
+  box-sizing: border-box;
 }
 
 input[type="text"]:focus,
@@ -254,6 +75,7 @@ select:focus {
 button {
   padding: 12px;
   font-size: 1rem;
+  font-weight: bold;
   color: #fff;
   background-color: #333;
   border: none;
@@ -267,11 +89,15 @@ button:hover {
   background-color: #555;
 }
 
-/* Table Styles */
 .order-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+}
+
+.order-table thead {
+  background-color: #f0f0f0;
+  color: rgb(128, 128, 128);
 }
 
 .order-table th,
@@ -280,10 +106,6 @@ button:hover {
   text-align: left;
   font-size: 0.9rem;
   border-bottom: 1px solid #e0e0e0;
-}
-
-.order-table thead {
-  background-color: #f0f0f0;
 }
 
 .order-table tbody tr:nth-child(even) {
@@ -298,10 +120,12 @@ button:hover {
   border: none;
   cursor: pointer;
   transition: color 0.2s;
+  margin-top: -3px;
 }
 
 .order-table button:hover {
-  color: #a31515;
+  background-color: #a31515;
+  color: #ebebeb;
 }
 
 /* Export Button Container */
@@ -318,26 +142,26 @@ button:hover {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .App {
-      padding: 0;
+    padding: 0;
   }
 
   .order-table th,
   .order-table td {
-      padding: 10px;
+    padding: 10px;
   }
 
   button {
-      font-size: 0.9rem;
-      padding: 10px;
+    font-size: 0.9rem;
+    padding: 10px;
   }
 
   .App > div {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .App > div button {
-      width: 100%;
-      margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
 
@@ -345,22 +169,22 @@ button:hover {
   input[type="text"],
   input[type="number"],
   select {
-      font-size: 0.9rem;
-      padding: 8px;
+    font-size: 0.9rem;
+    padding: 8px;
   }
 
   .order-table th,
   .order-table td {
-      padding: 8px;
+    padding: 8px;
   }
 
   button {
-      font-size: 0.9rem;
-      padding: 8px;
+    font-size: 0.9rem;
+    padding: 8px;
   }
 
   .order-table button {
-      font-size: 0.8rem;
-      padding: 5px;
+    font-size: 0.8rem;
+    padding: 5px;
   }
 }

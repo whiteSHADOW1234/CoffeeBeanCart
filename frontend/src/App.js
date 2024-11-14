@@ -88,7 +88,7 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <h1>Coffee Bean Ordering</h1>
+        <h1>The Coffee Bean Cart</h1>
       </header>
       <OrderForm stores={stores} />
       <div>
