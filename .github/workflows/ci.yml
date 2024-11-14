@@ -31,15 +31,15 @@ jobs:
         run: npm test --prefix frontend
 
       - name: Build Docker images
-        run: docker-compose build
+        run: docker compose build
 
 
       - name: Run tests on Dockerized application
         run: |
-          docker-compose up -d  --build
+          docker compose up -d  --build
           sleep 30  # Allow time for backend/db to start
-          docker-compose run --rm backend npm test # run backend tests in the container
-          docker-compose down -v
+          docker compose run --rm backend npm test # run backend tests in the container
+          docker compose down -v
 
   deploy:
     needs: build
