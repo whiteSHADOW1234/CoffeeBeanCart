@@ -1,0 +1,68 @@
+# .github/workflows/ci.yml
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16  # Or your desired Node.js version
+
+      - name: Install backend dependencies
+        run: npm install --prefix backend
+
+      - name: Install frontend dependencies
+        run: npm install --prefix frontend
+
+
+      - name: Build backend
+        run: npm run build --prefix backend
+
+      - name: Build frontend
+        run: npm run build --prefix frontend
+
+      - name: Run backend tests
+        run: npm test --prefix backend
+
+      - name: Run frontend tests
+        run: npm test --prefix frontend
+
+      - name: Build Docker images
+        run: docker-compose build
+
+
+      - name: Run tests on Dockerized application
+        run: |
+          docker-compose up -d  --build
+          sleep 30  # Allow time for backend/db to start
+          docker-compose run --rm backend npm test # run backend tests in the container
+          docker-compose down -v
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Login to your container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ secrets.DOCKER_REGISTRY }}  # Replace with your registry
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}  # Your Docker Hub/registry password
+
+      - name: Build and push images
+        run: |
+          docker-compose build
+          docker-compose run --rm backend npm run build # Build backend in the container
+          docker push ${{ secrets.DOCKER_REGISTRY }}/<your_backend_image_name>:<tag>
+          docker push ${{ secrets.DOCKER_REGISTRY }}/<your_frontend_image_name>:<tag>
