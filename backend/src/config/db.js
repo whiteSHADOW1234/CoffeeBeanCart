@@ -13,6 +13,6 @@ const pool = mysql.createPool({
   queueLimit: 0
 });
 
-
+console.log('API_BASE_URL:', process.env.API_BASE_URL);
 
 module.exports = pool;
