@@ -46,7 +46,7 @@
   "devDependencies": {
     "@babel/core": "7.22.5",
     "@babel/eslint-parser": "7.22.5",
-    "@babel/plugin-transform-private-property-in-object": "^7.25.9",
+    "@babel/plugin-transform-private-property-in-object": "^7.23.4",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
     "@testing-library/jest-dom": "^6.6.3",
