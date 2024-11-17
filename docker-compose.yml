@@ -4,9 +4,9 @@ services:
   app:
     build:
       context: .
-      dockerfile: backend/Dockerfile
+      dockerfile: ./Dockerfile
       args:
-        - API_BASE_URL=/api/orders
+        - API_BASE_URL=${API_BASE_URL}
     ports:
       - "3309:3309"
     environment:
