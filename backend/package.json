@@ -4,7 +4,8 @@
   "description": "Backend for coffee bean ordering app",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "node dist/server.js",
+    "build": "node build.js",
     "test": "jest --detectOpenHandles --forceExit"
   },
   "keywords": [],
@@ -14,6 +15,7 @@
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "csv-stringify": "^6.5.1",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "json2csv": "^6.0.0-alpha.2",
     "mysql2": "^3.11.4"

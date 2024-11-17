@@ -1,8 +1,22 @@
+FROM node:16-alpine
 
-FROM node:16
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-EXPOSE 3001 
-CMD ["npm", "start"]
+
+COPY backend/package*.json ./backend/
+RUN npm ci --only=production --prefix backend
+
+COPY backend/ ./backend
+
+COPY frontend/package*.json ./frontend/
+RUN npm ci --only=production --prefix frontend
+
+COPY frontend/ ./frontend
+
+ARG API_BASE_URL
+ENV API_BASE_URL=${API_BASE_URL}
+
+RUN npm run build --prefix frontend
+
+RUN rm -rf ./frontend/node_modules
+
+CMD ["npm", "start", "--prefix", "backend"]

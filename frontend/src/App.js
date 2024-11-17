@@ -4,7 +4,6 @@ import OrderForm from './components/OrderForm';
 import OrderList from './components/OrderList';
 import orderService from './services/orderService';
 
-
 function App() {
   const [orders, setOrders] = useState([]);
   const [stores, setStores] = useState({});
