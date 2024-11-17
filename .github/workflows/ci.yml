@@ -9,6 +9,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DB_HOST: ${{ secrets.DB_HOST }}
+      MYSQL_USER: ${{ secrets.MYSQL_USER }}
+      MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+      MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+      MYSQL_TEST_DATABASE: ${{ secrets.MYSQL_TEST_DATABASE }}
+      API_BASE_URL: ${{ secrets.API_BASE_URL }}
+      PORT: ${{ secrets.PORT }}
+      IMAGE_NAME: coffee-bean-order #Or your image name
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }} #Your docker username
+      DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }} #Your docker registry
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
