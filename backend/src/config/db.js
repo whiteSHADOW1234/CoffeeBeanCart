@@ -13,12 +13,6 @@ const pool = mysql.createPool({
   queueLimit: 0
 });
 
-console.log('DB_HOST:', process.env.DB_HOST);
-console.log('MYSQL_USER:', process.env.MYSQL_USER);
-console.log('MYSQL_PASSWORD:', process.env.MYSQL_PASSWORD);
-console.log('MYSQL_DATABASE:', process.env.MYSQL_DATABASE);
-console.log('DB_PORT:', process.env.DB_PORT);
-
 
 
 module.exports = pool;
