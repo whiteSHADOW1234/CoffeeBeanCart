@@ -32,21 +32,6 @@ A full-stack web application for ordering coffee beans, with a modern tech stack
 - **CSV Export**: Export orders and inventory data for easy tracking.
 
 
-## Project Structure
-
-```
-coffee-bean-order/
-├── backend/
-│   ├── src/          # Backend logic
-│   ├── __tests__/    # Tests
-│   └── Dockerfile
-├── frontend/
-│   ├── src/          # React components
-│   └── Dockerfile
-├── docker-compose.yml
-└── .env              # Environment variables
-```
-
 ## Local Setup
 
 1. Clone the repository.
@@ -57,6 +42,9 @@ coffee-bean-order/
   MYSQL_DATABASE=<YOUR_MYSQL_DATABASE>
   MYSQL_TEST_DATABASE=<YOUR_MYSQL_TEST_DATABASE>
   API_BASE_URL=<YOUR_API_BASE_URL>
+  REACT_APP_API_BASE_URL=<YOUR_REACT_APP_API_BASE_URL>
+  PORT=<YOUR_PORT>
+  DB_HOST=<YOUR_DB_HOST>
   ```
 4. Run `docker-compose up --build -d`.
 5. Access at `http://localhost`.
