@@ -36,18 +36,18 @@ A full-stack web application for ordering coffee beans, with a modern tech stack
 
 1. Clone the repository.
 2. Set up a MySQL database and update `.env` with credentials.
-  ```
-  MYSQL_USER=<YOUR_MYSQL_USER>
-  MYSQL_PASSWORD=<YOUR_MYSQL_PASSWORD>
-  MYSQL_DATABASE=<YOUR_MYSQL_DATABASE>
-  MYSQL_TEST_DATABASE=<YOUR_MYSQL_TEST_DATABASE>
-  API_BASE_URL=<YOUR_API_BASE_URL>
-  REACT_APP_API_BASE_URL=<YOUR_REACT_APP_API_BASE_URL>
-  PORT=<YOUR_PORT>
-  DB_HOST=<YOUR_DB_HOST>
-  ```
-4. Run `docker-compose up --build -d`.
-5. Access at `http://localhost:YOUR_PORT`.
+    ```
+    MYSQL_USER=<YOUR_MYSQL_USER>
+    MYSQL_PASSWORD=<YOUR_MYSQL_PASSWORD>
+    MYSQL_DATABASE=<YOUR_MYSQL_DATABASE>
+    MYSQL_TEST_DATABASE=<YOUR_MYSQL_TEST_DATABASE>
+    API_BASE_URL=<YOUR_API_BASE_URL>
+    REACT_APP_API_BASE_URL=<YOUR_REACT_APP_API_BASE_URL>
+    PORT=<YOUR_PORT>
+    DB_HOST=<YOUR_DB_HOST>
+    ```
+3. Run `docker-compose up --build -d`.
+4. Access at `http://localhost:YOUR_PORT`.
 
 ## Contributing
 
