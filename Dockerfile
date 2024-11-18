@@ -2,7 +2,7 @@
 FROM node:16-alpine AS build-stage
 
 WORKDIR /app
-RUN npm install -g @babel/plugin-proposal-private-property-in-object
+
 # Install Node dependencies for backend
 COPY backend/package*.json ./backend/
 RUN npm ci --only=production --prefix backend
