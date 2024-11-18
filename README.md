@@ -9,7 +9,11 @@
 </p>
 A full-stack web application for ordering coffee beans, with a modern tech stack and robust CI/CD pipeline. This project provides a smooth ordering experience and aims to support coffee enthusiasts and admin users in managing orders and inventory efficiently.
 
-[Demo Link](https://coffeecart-frontend.onrender.com/)
+<p align="center">
+  <a href="https://coffeebeancart.onrender.com/">Demo Link</a>
+</p>
+
+*Note: The demo link uses Render's free plan, which may go offline occasionally. If it's down, please wait a moment and refresh.*
 
 ## Features
 
