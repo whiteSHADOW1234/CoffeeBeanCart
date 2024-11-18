@@ -1,7 +1,7 @@
 FROM node:16-alpine
 
 WORKDIR /app
-
+RUN npm install -g @babel/cli
 COPY backend/package*.json ./backend/
 RUN npm ci --only=production --prefix backend
 
