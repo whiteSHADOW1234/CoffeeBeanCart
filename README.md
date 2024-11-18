@@ -47,7 +47,7 @@ A full-stack web application for ordering coffee beans, with a modern tech stack
   DB_HOST=<YOUR_DB_HOST>
   ```
 4. Run `docker-compose up --build -d`.
-5. Access at `http://localhost`.
+5. Access at `http://localhost:YOUR_PORT`.
 
 ## Contributing
 
