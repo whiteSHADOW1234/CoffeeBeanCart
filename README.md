@@ -13,7 +13,8 @@ A full-stack web application for ordering coffee beans, with a modern tech stack
   <a href="https://coffeebeancart.onrender.com/">Demo Link</a>
 </p>
 
-*Note: The demo link uses Render's free plan and relies on other free online database hosting services, which may cause the website to go offline occasionally. If it's down, please wait a moment and refresh.*
+> [!NOTE]  
+> *The demo link uses Render's free plan and relies on other free online database hosting services, which may cause the website to go offline occasionally. **If it's down, please wait a moment and refresh.***
 
 ## Features
 
